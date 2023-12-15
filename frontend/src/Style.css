@@ -1,0 +1,125 @@
+ 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@200&family=Nunito:wght@500&family=Roboto+Condensed&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: large;
+  }
+  
+  
+  body {
+    font-family: "Poppins";
+    background-color: #67d041;
+background-image: linear-gradient(43deg, #28de5f 0%, #941eee 46%, #4af1e6 100%);
+
+  }
+  
+
+  .container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: linear-gradient(to right, rgb(80, 109, 227), rgb(45, 29, 230), rgb(165, 241, 42));
+    border-radius: 8px;
+    border-color : rgb(210, 41, 41);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #161616;
+    font-size:larger;
+  }
+  
+  
+  .inputs {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .name {
+    flex: 1;
+    font-weight: bold;
+  }
+  
+  .inputs input {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #e39090;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+  }
+  
+  .inputs input:focus {
+    outline: none;
+    border-color: #c90be6;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #eeff00;
+    color: rgb(27, 25, 25);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #4498f3;
+  }
+  
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    animation: slideIn 0.8s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  
+  td > * {
+    margin-right: 5px;
+  }
+  
