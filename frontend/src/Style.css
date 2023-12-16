@@ -10,16 +10,17 @@
     font-size: large;
   }
   
-  
-  body {
+  body 
+  {
     font-family: "Poppins";
     background-color: #67d041;
-background-image: linear-gradient(43deg, #28de5f 0%, #941eee 46%, #4af1e6 100%);
+    background-image: linear-gradient(43deg, #28de5f 0%, #941eee 46%, #4af1e6 100%);
 
   }
   
 
-  .container {
+  .container 
+  {
     max-width: 1100px;
     margin: 20px auto;
     padding: 20px;
@@ -119,7 +120,8 @@ background-image: linear-gradient(43deg, #28de5f 0%, #941eee 46%, #4af1e6 100%);
   }
   
   
-  td > * {
+  td > * 
+  {
     margin-right: 5px;
   }
   
