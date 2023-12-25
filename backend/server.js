@@ -7,10 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 const db=mysql.createConnection({
-    host:"bhfbgzwbtuicb7z43vhu-mysql.services.clever-cloud.com",
-    user:"uk4vbytwih8tkd3w",
-    password:"uk4vbytwih8tkd3w",
-    database:"bhfbgzwbtuicb7z43vhu",
+    host:"localhost",
+    user:"root",
+    password:"",
+    database:"empregist",
 })
 
 app.get('/',(req,res)=>{
@@ -55,6 +55,6 @@ app.delete('/:Emp_name', (req, res, next) => {
 });
 
 
-app.listen(3001, ()=>{
+app.listen(3003, ()=>{
     console.log("Running the server");
 })
