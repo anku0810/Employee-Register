@@ -4,7 +4,8 @@ import {useNavigate} from'react-router-dom';
 import './Style.css';
 
 
-function Home() {
+function Home() 
+{
     const [Emp_name, setEmp_name] = useState('')
     const [DOB, setDOB] = useState('')
     const [Age, setAge] = useState('')
@@ -17,20 +18,19 @@ function Home() {
     const navigate=useNavigate();
     const handleSubmit = (event) =>{
         console.log(Emp_name, DOB, Age, Department,Designation,Salary,Address,Phone_No);
-        event.preventDefault();
-        axios.post('http://localhost:3003/',{Emp_name, DOB, Age, Department,Designation,Salary,Address,Phone_No})
+        event.preventDefault();axios.post('http://localhost:8080/',{Emp_name, DOB, Age, Department,Designation,Salary,Address,Phone_No})
         .then(res =>{
             navigate('/');
         }).catch(err => console.log(err));
     }
     const [data,setData]=useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:3003/')
+        axios.get('http://localhost:8080/')
         .then(res => setData(res.data))
         .catch(err => console.log(err));   
     })
     const handleDelete=(Emp_name)=>{
-        axios.delete('http://localhost:3003/'+ Emp_name)
+        axios.delete('http://localhost:8080/'+ Emp_name)
         .then(res => navigate('/'))
         .catch(err => console.log(err)); 
     }
@@ -39,48 +39,56 @@ function Home() {
         <div className='bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 container mt-5'>
                     <form onSubmit={handleSubmit}>
                         <h1 >EMPLOYEE REGISTRATION</h1>
+
                         <div className='inputs'>
                             <div className='name'>Employee Name</div>
                             <div classname='inputs'>
                                 <input type='text' placeholder='Enter Employeee Name:' onChange={e => setEmp_name(e.target.value)}required/>
                             </div>
                         </div>
+
                         <div className='inputs'>
                             <div className='name'>DOB</div>
                             <div classname='inputs'>
                                 <input type='date' placeholder='Enter DOB:' onChange={e => setDOB(e.target.value)}required/>
                             </div>
                         </div>
+
                         <div className='inputs'>
                             <div className='name'>Age</div>
                             <div classname='inputs'>
                                 <input type='number' placeholder='Enter Age:' onChange={e => setAge(e.target.value)}required/>
                             </div>
                         </div>
+
                         <div className='inputs'>
                             <div className='name'>Department</div>
                             <div classname='inputs'>
                                 <input type='text' placeholder='Enter Department:' onChange={e => setDepartment(e.target.value)}required/>
                             </div>
                         </div>
+
                         <div className='inputs'>
                             <div className='name'>Designation</div>
                             <div classname='inputs'>
                                 <input type='text' placeholder='Enter Designation:' onChange={e => setDesignation(e.target.value)}required/>
                             </div>
                         </div>
+
                         <div className='inputs'>
                             <div className='name'>Salary</div>
                             <div classname='inputs'>
                                 <input type='number' placeholder='Enter Salary:' onChange={e => setSalary(e.target.value)}required/>
                             </div>
                         </div>
+
                         <div className='inputs'>
                             <div className='name'>Address</div>
                             <div classname='inputs'>
                                 <input type='text' placeholder='Enter Address :' onChange={e => setAddress(e.target.value)}required/>
                             </div>
                         </div>
+
                         <div className='inputs'>
                             <div className='name'>Phone Number</div>
                             <div classname='inputs'>
@@ -151,5 +159,5 @@ function Home() {
         </div> 
     </div>
   )
-                        }
+}
 export default Home
